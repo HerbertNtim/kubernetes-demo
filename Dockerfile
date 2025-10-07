@@ -4,7 +4,7 @@ FROM node:18-alpine AS base
 WORKDIR /app
 
 # Install deps separately for caching
-COPY package.json package-lock.json+ ./
+COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
 # Copy app source
